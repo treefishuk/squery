@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en-us">
-  <head>
+<head>
     <meta charset="UTF-8">
     <title>SQuery by treefishuk</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,128 +8,178 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
+</head>
+<body>
     <header class="page-header">
-      <h1 class="project-name">SQuery</h1>
-      <h2 class="project-tagline">The S is for Speed! or possibly Simple... </h2>
-      <a href="https://github.com/treefishuk/SQuery" class="btn">View on GitHub</a>
-      <a href="https://github.com/treefishuk/SQuery/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/treefishuk/SQuery/tarball/master" class="btn">Download .tar.gz</a>
+        <h1 class="project-name">SQuery</h1>
+        <h2 class="project-tagline">The S is for Speed! or possibly Simple... </h2>
+        <a href="https://github.com/treefishuk/SQuery" class="btn">View on GitHub</a>
+        <a href="https://github.com/treefishuk/SQuery/zipball/master" class="btn">Download .zip</a>
+        <a href="https://github.com/treefishuk/SQuery/tarball/master" class="btn">Download .tar.gz</a>
     </header>
 
-      <div class="container">
+    <div class="container">
 
-          <main class="left-section">
-
-
-              <section>
-                  <h1>
-                      <a id="welcome-to-squery" class="anchor" href="#welcome-to-squery" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to SQuery.
-                  </h1>
-                  <p>SQuery is a simple Javscript Library to ease the transition from JQuery to Vanilla JS.</p>
-
-                  <p>JQuery:</p>
-                  <code>
-                      var jQueryElement = $("#mytargetElement");
-                  </code>
-
-                  <p>SQuery:</p>
-
-                  <code>
-                      var sQueryElement = $.find("#mytargetElement");
-                  </code>
-
-                  <h2>
-                      <a id="why-ditch-jquery" class="anchor" href="#why-ditch-jquery" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why ditch JQuery?
-                  </h2>
-                  <p>So JQuery is great... It's simple and easy to use. But if you're anything like me you probably only use 10% of it (if that). Upon checking out the articles and videos below I decided Vanilla Javascript was the way to go: </p>
-                  <ul>
-                      <li><a href="http://youmightnotneedjquery.com">youmightnotneedjquery.com</a></li>
-                      <li><a href="http://gomakethings.com/ditching-jquery-for-vanilla-js">gomakethings.com/ditching-jquery-for-vanilla-js</a></li>
-                      <li><a href="https://www.youtube.com/watch?v=keyCg253S-o">Todd Motto - Demystifying JavaScript: you don't need jQuery (FOWD 2014)</a></li>
-                      <li><a href="http://vanilla-js.com/">Vanilla.JS</a></li>
-                  </ul>
-                  <p>
-                      As an overview of the above:
-
-                      <ul>
-                          <li>JQuery is often unecessary bloat (90kb larger then SQuery)</li>
-                          <li>JQuery isn't needed to fix browser inconsistancies (they are now pretty easy to work around)</li>
-                          <li>JQuery is about 90% slower then standard Javascript at finding elements</li>
-                      </ul>
-
-                  </p>
-                  <p>So in short <b>large performance gains</b> is the main reason to ditch JQuery.</p>
-                  <h2>
-                      <a id="but-a-bunch-of-the-stuff-i-use-is-dependant-on-jquery" class="anchor" href="#but-a-bunch-of-the-stuff-i-use-is-dependant-on-jquery" aria-hidden="true"><span class="octicon octicon-link"></span></a>But a bunch of the stuff I use is dependant on JQuery...
-                  </h2>
-                  <h3>
-                      <a id="bootstrap" class="anchor" href="#bootstrap" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bootstrap
-                  </h3>
-                  <p>Not So! Check out : <a href="http://thednp.github.io/bootstrap.native/">thednp.github.io/bootstrap.native</a></p>
-                  <h3>
-                      <a id="JQueryValidation" class="anchor" href="#JQueryValidation" aria-hidden="true"><span class="octicon octicon-link"></span></a>JQuery Validation
-                  </h3>
-                  <p>For ASP Developer's JQuery validation is often at the core of MVC projects. I have yet to find a swap out alternative but intend to tackle this shortly.</p>
-
-              </section>
+        <main class="left-section">
 
 
+            <section>
+                <h1>
+                    <a id="welcome-to-squery" class="anchor" href="#welcome-to-squery" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to SQuery.
+                </h1>
+                <p>SQuery is a simple Javscript Library to ease the transition from JQuery to Vanilla JS.</p>
 
-              <section>
+                <p>JQuery:</p>
+                <code>
+                    var jQueryElement = $("#mytargetElement");
+                </code>
+
+                <p>SQuery:</p>
+
+                <code>
+                    var sQueryElement = $.find("#mytargetElement");
+                </code>
+
+                <h2>
+                    <a id="why-ditch-jquery" class="anchor" href="#why-ditch-jquery" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why ditch JQuery?
+                </h2>
+                <p>So JQuery is great... It's simple and easy to use. But if you're anything like me you probably only use 10% of it (if that). Upon checking out the articles and videos below I decided Vanilla Javascript was the way to go: </p>
+                <ul>
+                    <li><a href="http://youmightnotneedjquery.com">youmightnotneedjquery.com</a></li>
+                    <li><a href="http://gomakethings.com/ditching-jquery-for-vanilla-js">gomakethings.com/ditching-jquery-for-vanilla-js</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=keyCg253S-o">Todd Motto - Demystifying JavaScript: you don't need jQuery (FOWD 2014)</a></li>
+                    <li><a href="http://vanilla-js.com/">Vanilla.JS</a></li>
+                </ul>
+                <p>
+                    As an overview of the above:
+
+                    <ul>
+                        <li>JQuery is often unecessary bloat (90kb larger then SQuery)</li>
+                        <li>JQuery isn't needed to fix browser inconsistancies (they are now pretty easy to work around)</li>
+                        <li>JQuery is about 90% slower then standard Javascript at finding elements</li>
+                    </ul>
+
+                </p>
+                <p>So in short <b>large performance gains</b> is the main reason to ditch JQuery.</p>
+                <h2>
+                    <a id="but-a-bunch-of-the-stuff-i-use-is-dependant-on-jquery" class="anchor" href="#but-a-bunch-of-the-stuff-i-use-is-dependant-on-jquery" aria-hidden="true"><span class="octicon octicon-link"></span></a>But a bunch of the stuff I use is dependant on JQuery...
+                </h2>
+                <h3>
+                    <a id="bootstrap" class="anchor" href="#bootstrap" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bootstrap
+                </h3>
+                <p>Not So! Check out : <a href="http://thednp.github.io/bootstrap.native/">thednp.github.io/bootstrap.native</a></p>
+                <h3>
+                    <a id="JQueryValidation" class="anchor" href="#JQueryValidation" aria-hidden="true"><span class="octicon octicon-link"></span></a>JQuery Validation
+                </h3>
+                <p>For ASP Developer's JQuery validation is often at the core of MVC projects. I have yet to find a swap out alternative but intend to tackle this shortly.</p>
+
+            </section>
+
+            <section>
+                <h1>
+                    <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage
+                </h1>
+                <p>Coming soon...</p>
+            </section>
+
+            <section>
+                <h1>
+                    <a id="functions" class="anchor" href="#functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Functions
+                </h1>
+                <p>Coming soon...</p>
+            </section>
+
+            <section>
+                <h1>
+                    <a id="thanks" class="anchor" href="#functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Thanks and simular projects
+                </h1>
+                <p>Coming soon...</p>
+            </section>
 
 
-                  <h3>
-                      <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage
-                  </h3>
-                  <p>Coming soon...</p>
-
-                  <h3>
-                      <a id="functions" class="anchor" href="#functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Functions
-                  </h3>
-                  <p>Coming soon...</p>
-
-              </section>
 
 
+        </main>
+
+        <aside class="right-section">
+
+            <h3><a href="#welcome-to-squery">About</a></h3>
+
+            <ul>
+                <li><a href="#welcome-to-squery">Overview</a></li>
+                <li><a href="#why-ditch-jquery">Why ditch Jquery</a></li>
+                <li><a href="#but-a-bunch-of-the-stuff-i-use-is-dependant-on-jquery">Framework dependacies</a></li>
+
+            </ul>
 
 
-          </main>
+            <h3><a href="#usage">Usage</a></h3>
 
-          <aside class="right-section">
+            <h3><a href="#functions">Functions</a></h3>
 
-              <h3><a href="#welcome-to-squery">About</a></h3>
 
-              <ul>
-                  <li><a href="#welcome-to-squery">Overview</a></li>
-                  <li><a href="#why-ditch-jquery">Why ditch Jquery</a></li>
-                  <li><a href="#but-a-bunch-of-the-stuff-i-use-is-dependant-on-jquery">Framework dependacies</a></li>
+            <a href="#findingElements">Finding Elements </a>
 
-              </ul>
+            <ul>
+                <li><a href="#JQueryValidation">$.find</a></li>
+                <li><a href="#JQueryValidation">$.findAll</a></li>
+            </ul>
 
-              
+            <a href="#classManipulations">Class Manipulations </a>
 
-              <h3><a href="#usage">Usage</a></h3>
+            <ul>
+                <li><a href="#JQueryValidation">$.hasClass</a></li>
+                <li><a href="#JQueryValidation">$.addClass</a></li>
+                <li><a href="#JQueryValidation">$.removeClass</a></li>
+                <li><a href="#JQueryValidation">$.toggleClass</a></li>
 
-              <h3><a href="#functions">Usage</a></h3>
+            </ul>
 
-              <ul>
-                  <li><a href="#JQueryValidation">$.find</a></li>
-                  <li><a href="#JQueryValidation">$.findall</a></li>
-              </ul>
+            <a href="#events">Events </a>
+            <ul>
+                <li><a href="#JQueryValidation">$.on</a></li>
+                <li><a href="#JQueryValidation">$.documentReady</a></li>
 
-              
+            </ul>
 
-             
+            <a href="#classManipulations">Attribute Finding/Setting </a>
 
-          </aside>
+            <ul>
+                <li><a href="#JQueryValidation">$.attr</a></li>
+                <li><a href="#JQueryValidation">$.data</a></li>
+            </ul>
 
-          <footer class="site-footer">
-              <span class="site-footer-owner"><a href="https://github.com/treefishuk/SQuery">SQuery</a> is maintained by <a href="https://github.com/treefishuk">treefishuk</a>.</span>
-          </footer>
-      </div>
+            <a href="#classManipulations">Hide/Show </a>
 
-  
-  </body>
+            <ul>
+                <li><a href="#JQueryValidation">$.hide</a></li>
+                <li><a href="#JQueryValidation">$.show</a></li>
+            </ul>
+
+
+            <a href="#classManipulations">Inserting/Ammending/Removing Content </a>
+
+            <ul>
+                <li><a href="#JQueryValidation">$.html</a></li>
+                <li><a href="#JQueryValidation">$.before</a></li>
+                <li><a href="#JQueryValidation">$.after</a></li>
+                <li><a href="#JQueryValidation">$.prepend</a></li>
+                <li><a href="#JQueryValidation">$.append</a></li>
+                <li><a href="#JQueryValidation">$.remove</a></li>
+
+            </ul>
+
+            <a href="#classManipulations">Ajax </a>
+
+
+
+        </aside>
+
+        <footer class="site-footer">
+            <span class="site-footer-owner"><a href="https://github.com/treefishuk/SQuery">SQuery</a> is maintained by <a href="https://github.com/treefishuk">treefishuk</a>.</span>
+        </footer>
+    </div>
+
+
+</body>
 </html>
