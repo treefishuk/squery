@@ -16,12 +16,36 @@ body {
     margin-bottom: 10px;
 }
 
+section{
+    padding-top: 10px;
+}
+
+pre{
+
+        overflow: auto;
+                background: #F3F6FA;
+    padding: 0;
+    -moz-tab-size: 2;
+    -o-tab-size: 2;
+    tab-size: 2;
+    -ms-word-break: normal;
+    word-break: normal;
+    word-break: normal;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+    position: relative;
+}
+
+
 code {
     background-color: #f3f6fa;
-    padding: 10px;
     margin-bottom: 10px;
-    display: inline-block;
-    width: 100%;
+    padding: 15px;
+    white-space: pre;
+    overflow: auto;
+    display: block;
 }
 
 li {

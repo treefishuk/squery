@@ -147,62 +147,96 @@
                         <p>
                             Finds the fisrt matching element with provided selector.
                         </p>
-                        <code>
-                            var sQueryElement = $.find("#mytargetElement");
-                        </code>
+<pre>
+<code>
+var sQueryElement = $.find("#mytargetElement");
+</code>
+</pre>
+
                     </section>
                     <section id="findAll">
 
-                        <h2>$.findAll</h2>
+                        <h2>$.findAll(elem, function())</h2>
                         <p>
                             Finds all matching elements with provided selector.
                         </p>
-                        <code>
-                            var sQueryElement = $.find("#mytargetElement");
+                        <h3>Example</h3>
+                        <p>Find all elements with the class ".className" and log the element in the console.</p>
 
+<pre>
+<code>
+$.findAll(".className", function (el, i) {
+console.log(el);
+});
+</code>
+</pre>
 
-
-
-                        </code>
                     </section>
                 </section>
 
 
                 <section id="classManipulations">
                     <h1>Class Manipulations</h1>
+                    <p>These are adapted from <a href="https://github.com/toddmotto/apollo">Appolo.js by Todd Motto</a></p>
+
                     <section id="hasClass">
-                        <h2>$.hasClass</h2>
+                        <h2>$.hasClass(elem, class)</h2>
                         <p>
-                            Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+                            Check if element has a class.
                         </p>
+                        <h3>Example</h3>
+                        <p>elementHasClass returns true if "mytargetElement" has the class ".test".</p>
+                        <p>elementHasClass false if "mytargetElement" does not have the class ".test".</p>
+<pre>
+<code>
+var elementHasClass = $.hasclass("#mytargetElement", ".test");
+</code>
+</pre>
+
+
+
                     </section>
                     <section id="addClass">
 
                         <h2>$.addClass</h2>
                         <p>
-                            Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+                            Add a class to an element.
                         </p>
-                    </section>
-                    <section id="addClass">
-
-                        <h2>$.addClass</h2>
-                        <p>
-                            Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
-                        </p>
+                        <h3>Example</h3>
+                        <p>Adds class ".test" to element with id "example"</p>
+<pre>
+<code>
+$.addClass("#example", ".test");
+</code>
+</pre>
                     </section>
                     <section id="removeClass">
 
                         <h2>$.removeClass</h2>
                         <p>
-                            Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+                            Removes a class from an element.
                         </p>
+                        <h3>Example</h3>
+                        <p>Removes class ".test" from element with id "example"</p>
+<pre>
+<code>
+$.removeClass("#example", ".test");
+</code>
+</pre>
                     </section>
                     <section id="toggleClass">
 
                         <h2>$.toggleClass</h2>
                         <p>
-                            Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+                            Removes a class from an element if it exists and adds it if not.
                         </p>
+                        <h3>Example</h3>
+                        <p>Add class ".test" to element with id "example" if it doesnt exist/remove it if it exists.</p>
+<pre>
+<code>
+$.toggleClass("#example", ".test");
+</code>
+</pre>
                     </section>
                 </section>
 
@@ -212,15 +246,38 @@
                     <section id="on">
                         <h2>$.on</h2>
                         <p>
-                            Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+                            Bind a function to an event.
                         </p>
+                        <h3>Example</h3>
+                        <p>When element with id "example" is clicked, log "clicked button" to the console.</p>
+<pre>
+<code>
+$.on("#example", "click", function(e){
+
+    e.preventDefault();
+
+    console.log("clicked button");
+
+    });
+</code>
+</pre>
                     </section>
                     <section id="documentReady">
 
                         <h2>$.documentReady</h2>
                         <p>
-                            Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+                            A function that fires when the DOM is fully loaded..
                         </p>
+                        <h3>Example</h3>
+<pre>
+<code>
+$.documentReady(function(){
+
+    //Putting functions inside here is good plan.
+
+    });
+</code>
+</pre>
                     </section>
                 </section>
 
@@ -230,15 +287,44 @@
                     <section id="attr">
                         <h2>$.attr</h2>
                         <p>
-                            Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+                            Find or set an attribute value of an element 
                         </p>
+                        <h3>Example: Finding a value</h3>
+                        <p>Find a link with the id "example". Find the elements href value and save to a variable named "href"</p>
+<pre>
+<code>
+var href = $.attr("#example", "href");
+</code>
+</pre>
+                        <h3>Example: Setting a value</h3>
+                        <p>Find a link with the id "example". Find the elements href value and change value to "http://youmightnotneedjquery.com/"</p>
+<pre>
+<code>
+$.attr("#example", "href", "http://youmightnotneedjquery.com/");
+</code>
+</pre>
+
                     </section>
                     <section id="data">
 
                         <h2>$.data</h2>
                         <p>
-                            Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+                            Find or set a HTML5 data attribute of an element
                         </p>
+                        <h3>Example: Finding a value</h3>
+                        <p>Find a link with the id "example". Find the elements data-test value and save to a variable named "test"</p>
+<pre>
+<code>
+var test = $.data("#example", "test");
+</code>
+</pre>
+                        <h3>Example: Setting a value</h3>
+                        <p>Find a link with the id "example". Find the elements  data-test value and change value to "newShinny"</p>
+<pre>
+<code>
+$.data("#example", "test", "newShinny");
+</code>
+</pre>
                     </section>
                 </section>
 
@@ -430,5 +516,6 @@
         </footer>
     </div>
     <script src="bootstrap-native.js"></script>
+
 </body>
 </html>
