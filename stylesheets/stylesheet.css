@@ -156,15 +156,23 @@ h1, h2, h3 {
 }
 
 
-.nav-stacked .active a {
+.nav-stacked .active > a {
     display: inline-block;
-    background: #333;
+    background: #E8E8E8;
 }
 
 
+.hidden{
+    display: none;
+}
 
+ul.active > ul.hidden {
+    display: inline-block;
+}
 
-
+li.active > ul.hidden {
+    display: inline-block;
+}
 
 
 
