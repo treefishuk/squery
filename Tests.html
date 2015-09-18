@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+
+
+
+    <h1 id="heading"></h1>
+
+
+    <ul>
+        <li class="class">Something 1</li>
+        <li class="class">Something 2</li>
+        <li class="class">Something 3</li>
+        <li class="class">Something 4</li>
+    </ul>
+    <script src="SQuery.js"></script>
+
+    <script>
+        $.findAll(".class", function (el, i) {
+
+            console.log(el);
+
+        });
+
+    </script>
+
+</body>
+</html>
