@@ -155,23 +155,43 @@ h1, h2, h3 {
     top: 0;
 }
 
+.nav-stacked{
 
-.nav-stacked .active > a {
-    display: inline-block;
-    background: #E8E8E8;
+    padding: 0 10px;
+
 }
 
 
-.hidden{
+
+.nav-stacked ul{
+    list-style: none;
+}
+.nav-stacked li{
+    display: block;
+}
+.nav-stacked li a{
+    padding: 5px;
+    width: 100%;
+    display: block;
+
+}
+
+.nav-stacked .active > a {
+    display: block;
+    color: #159957;
+}
+
+
+.nav-stacked .hidden{
     display: none;
 }
 
-ul.active > ul.hidden {
-    display: inline-block;
+.nav-stacked li.active > ul.hidden {
+    display: block;
 }
 
-li.active > ul.hidden {
-    display: inline-block;
+.nav-stacked li.active li.hidden {
+    display: block;
 }
 
 
@@ -199,7 +219,7 @@ li.active > ul.hidden {
 
         .nav > li a:hover, .nav > li a:focus {
             text-decoration: none;
-            background-color: #159957;
+            background-color: #f1f1f1;
         }
 
 
