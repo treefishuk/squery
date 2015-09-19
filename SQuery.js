@@ -8,7 +8,7 @@
     }
 })(this, function () {
 
-    'use strict';
+    'use strict'; 
 
     var $ = {};
 
@@ -111,7 +111,7 @@
 
     $.addClass = function (elem, classes) {
         /// <signature>
-        /// <summary>Add Classes</summary>
+        /// <summary>Add classes</summary>
         /// <param name="elem" type="string">Enter a css selector inside quotation marks to find element, or an existing element variable</param>
         /// <param name="classes" type="string">Enter classes to add"</param>
         /// </signature>
@@ -207,7 +207,7 @@
 
     $.html = function (elem, value) {
         /// <signature>
-        /// <summary>Shows Element by removing .hidden class</summary>
+        /// <summary>Replace inner html of an element</summary>
         /// <param name="elem" type="string">Enter a css selector inside quotation marks to find element, or an existing element variable</param>
         /// <param name="value" type="string">Value of new contents of element</param>
         /// </signature>
@@ -216,7 +216,7 @@
 
     $.before = function (elem, value) {
         /// <signature>
-        /// <summary>before </summary>
+        /// <summary>Add new content before opening tag of targeted element</summary>
         /// <param name="elem" type="string">Enter a css selector inside quotation marks to find element, or an existing element variable</param>
         /// <param name="value" type="string">Value of new contents to add before given element</param>
         /// </signature>
@@ -225,7 +225,7 @@
 
     $.after = function (elem, value) {
         /// <signature>
-        /// <summary>before </summary>
+        /// <summary>Add new content after closing tag of targeted element</summary>
         /// <param name="elem" type="string">Enter a css selector inside quotation marks to find element, or an existing element variable</param>
         /// <param name="value" type="string">Value of new contents to add after given element</param>
         /// </signature>
@@ -234,7 +234,7 @@
 
     $.prepend = function (elem, value) {
         /// <signature>
-        /// <summary>before </summary>
+        /// <summary>Add new content after opening tag of targeted element</summary>
         /// <param name="elem" type="string">Enter a css selector inside quotation marks to find element, or an existing element variable</param>
         /// <param name="value" type="string">Value of new contents to add after opening tag of given element</param>
         /// </signature>
@@ -243,11 +243,20 @@
 
     $.append = function (elem, value) {
         /// <signature>
-        /// <summary>before </summary>
+        /// <summary>Add new content before closing tag of targeted element</summary>
         /// <param name="elem" type="string">Enter a css selector inside quotation marks to find element, or an existing element variable</param>
         /// <param name="value" type="string">Value of new contents to add before closing tag of given element</param>
         /// </signature>
         insertHtml(elem, "beforeend", value)
+    }
+
+    $.remove = function (elem) {
+        /// <signature>
+        /// <summary>Remove Element</summary>
+        /// <param name="elem" type="string">Enter a css selector inside quotation marks to find element, or an existing element variable</param>
+        /// </signature>
+        var a = findElement(elem);
+        a.parentNode.removeChild(a);
     }
 
     // Document Ready Function ----------------------------------------------------------------------------------------------------------------------------|
@@ -255,7 +264,7 @@
     $.documentReady = function (fn) {
         /// <signature>
         /// <summary>A Cross Browser Document Ready Function</summary>
-        /// <param name="fn" type="string">Enter a function to run when document is ready. Usually best to put all code inside this function.</param>
+        /// <param name="fn" type="function">Enter a function to run when document is ready. Usually best to put all code inside this function.</param>
         /// </signature>
         if (document.readyState != 'loading') {
             fn();
@@ -274,11 +283,11 @@
     $.ajax = function (options) {
         /// <signature>
         /// <summary>An Ajax Wrapper based on JQuery's Implementation</summary>
-        /// <param name="options" type="object">Enter a function to run when document is ready. Usually best to put all code inside this function.
-        /// <param name=")" type="function">Enter a function to run when document is ready. Usually best to put all code inside this function.
-        /// &#10;Url {string}
-        /// &#10;Type {string}
-        /// &#10;Success {function}
+        /// <param name="options" type="object">A Javascript object containing the setting for the AJAX call.
+        /// &#10;url {string}
+        /// &#10;type {string}
+        /// &#10;data {string}
+        /// &#10;success {function}
         ///</param>
         /// </signature>
 
@@ -292,6 +301,8 @@
         }
 
         else if (options.type == "GET" || options.type == "JSON") {
+
+            console.log("Get");
 
             var request = new XMLHttpRequest();
             request.open('GET', options.url, true);
@@ -331,13 +342,75 @@
 
     }
 
+    $.serialize = function (elem) {
+        /// <signature>
+        /// <summary>Serializes form fields into an AJAX POST ready string</summary>
+        /// <param name="elem" type="string">Enter a css selector inside quotation marks to find element, or an existing element variable</param>
+        /// </signature>
+
+        var form = findElement(elem);
+
+        if (!form || form.nodeName !== "FORM") {
+            return;
+        }
+        var i, j, q = [];
+        for (i = form.elements.length - 1; i >= 0; i = i - 1) {
+            if (form.elements[i].name === "") {
+                continue;
+            }
+            switch (form.elements[i].nodeName) {
+                case 'INPUT':
+                    switch (form.elements[i].type) {
+                        case 'text':
+                        case 'hidden':
+                        case 'password':
+                        case 'button':
+                        case 'reset':
+                        case 'submit':
+                            q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
+                            break;
+                        case 'checkbox':
+                        case 'radio':
+                            if (form.elements[i].checked) {
+                                q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
+                            }
+                            break;
+                        case 'file':
+                            break;
+                    }
+                    break;
+                case 'TEXTAREA':
+                    q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
+                    break;
+                case 'SELECT':
+                    switch (form.elements[i].type) {
+                        case 'select-one':
+                            q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
+                            break;
+                        case 'select-multiple':
+                            for (j = form.elements[i].options.length - 1; j >= 0; j = j - 1) {
+                                if (form.elements[i].options[j].selected) {
+                                    q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].options[j].value));
+                                }
+                            }
+                            break;
+                    }
+                    break;
+                case 'BUTTON':
+                    switch (form.elements[i].type) {
+                        case 'reset':
+                        case 'submit':
+                        case 'button':
+                            q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
+                            break;
+                    }
+                    break;
+            }
+        }
+        return q.join("&");
+    }
+
     return $;
 
 });
 
-
-//Remove element
-
-//Parent
-//Child
-//Next/Sibling
