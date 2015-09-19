@@ -16,9 +16,14 @@ body {
     margin-bottom: 10px;
 }
 
+small{
+    font-size:  60%;
+}
+
 section{
     padding-top: 10px;
 }
+
 
 pre{
 
@@ -93,7 +98,7 @@ h1, h2, h3 {
 
 .left-section {
     float: left;
-    width: 70%;
+    width: 65%;
     margin-right: 5%;
     position: relative;
 }
@@ -104,17 +109,35 @@ h1, h2, h3 {
         clear: both;
     }
 
+
+
 .right-section {
     float: left;
-    width: 25%;
-    padding: 10px 0 10px 30px;
+    width: 30%;
+    padding: 10px 0 ;
     margin-top: 30px;
+}
+
+@media(max-width: 767px){
+
+
+    .left-section{
+        width: 100%;
+    }
+
+    .right-section{
+        display: none;
+    }
+
 }
 
 .site-footer {
     width: 100%;
     display: block;
     clear: both;
+    background: #f8f8f8;
+    padding: 30px;
+    margin-top: 20px;
 }
 
 .btn {
@@ -152,6 +175,15 @@ h1, h2, h3 {
     margin-right: auto;
     margin-left: auto;
 }
+.container:before,
+.container:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.container:after {
+    clear: both;
+}
 
 @media (min-width: 768px) {
     .container {
@@ -181,9 +213,24 @@ h1, h2, h3 {
 
 .nav-stacked{
 
-    padding: 0 10px;
+    padding: 0;
 
 }
+
+.nav-stacked .nav-stacked a{
+
+    padding-left: 30px;
+
+}
+
+.nav-stacked .nav-stacked .nav-stacked a{
+
+    padding-left: 40px;
+
+}
+
+
+
 
 
 
@@ -192,6 +239,7 @@ h1, h2, h3 {
 }
 .nav-stacked li{
     display: block;
+    margin: 0;
 }
 .nav-stacked li a{
     padding: 5px;
@@ -200,9 +248,14 @@ h1, h2, h3 {
 
 }
 
-.nav-stacked .active > a {
+.nav.nav-stacked > .active{
+    background: #FBFBFB;
+}
+
+.nav-stacked .nav-stacked .active > a {
     display: block;
     color: #159957;
+    border-left: 1px solid #159957;
 }
 
 
@@ -273,4 +326,20 @@ h1, h2, h3 {
 
 .nav-tabs .dropdown-menu {
     margin-top: -1px;
+}
+
+
+
+.gravatar{
+
+        display: inline-block;
+    border-radius: 50%;
+    float: right;
+}
+
+.site-footer-owner{
+
+        float: right;
+    padding: 50px 20px;
+
 }
