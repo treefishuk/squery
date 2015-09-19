@@ -343,3 +343,14 @@ h1, h2, h3 {
     padding: 50px 20px;
 
 }
+
+.footerInfo{
+
+    float: left;
+}
+
+.footerInfo ul{
+
+    list-style: none;
+    padding: 10px 0;
+}
